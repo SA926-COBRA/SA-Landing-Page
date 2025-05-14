@@ -1,0 +1,203 @@
+/* Animations CSS */
+
+/* Fade In */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Fade Up */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade Left */
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade Right */
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scale Up */
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Mobile Menu Animation */
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Loader Animation */
+.loader-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Animation Classes */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.animate-on-scroll.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Header Animation */
+#header {
+  transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+#header.scrolled .logo-img {
+  filter: brightness(1.1);
+}
+
+/* Slide Animation */
+.hero-slider .slide {
+  animation: zoomBackground 15s infinite alternate ease-in-out;
+  background-size: 110% 110%;
+}
+
+@keyframes zoomBackground {
+  0% {
+    background-size: 100% 100%;
+    background-position: center;
+  }
+  100% {
+    background-size: 110% 110%;
+    background-position: center;
+  }
+}
+
+/* Card Hover Effects */
+.service-card:hover .service-icon,
+.benefit-card:hover .benefit-icon,
+.value-card:hover .value-icon {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* Button Hover Animation */
+.primary-btn,
+.secondary-btn,
+.white-btn,
+.portal-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.primary-btn::after,
+.secondary-btn::after,
+.white-btn::after,
+.portal-btn::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.2), transparent);
+  transform: skewX(-25deg);
+  transition: 0.75s ease;
+}
+
+.primary-btn:hover::after,
+.secondary-btn:hover::after,
+.white-btn:hover::after,
+.portal-btn:hover::after {
+  left: 100%;
+}
+
+/* Fancy Service Card Animations */
+@keyframes fancyFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    box-shadow: none;
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(191,145,107,0.15);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    box-shadow: 0 4px 16px rgba(191,145,107,0.10);
+  }
+}
+
+.service-card.fancy-animate {
+  animation: fancyFadeUp 1s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+.service-card.fancy-animate.delay-1 { animation-delay: 0.1s; }
+.service-card.fancy-animate.delay-2 { animation-delay: 0.2s; }
+.service-card.fancy-animate.delay-3 { animation-delay: 0.3s; }
+.service-card.fancy-animate.delay-4 { animation-delay: 0.4s; }
+.service-card.fancy-animate.delay-5 { animation-delay: 0.5s; }
+.service-card.fancy-animate.delay-6 { animation-delay: 0.6s; }
+.service-card.fancy-animate.delay-7 { animation-delay: 0.7s; }
+.service-card.fancy-animate.delay-8 { animation-delay: 0.8s; }
+
+.service-card:hover {
+  box-shadow: 0 0 0 4px var(--warm-beige), 0 15px 30px rgba(0,0,0,0.12);
+  border: 1.5px solid var(--warm-beige);
+  background: linear-gradient(120deg, #fff8f3 60%, #f2e5d5 100%);
+  transition: box-shadow 0.3s, border 0.3s, background 0.4s;
+}
+
+.service-card .service-icon {
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), color 0.3s;
+}
+
+.service-card:hover .service-icon {
+  color: var(--dark-blue);
+  transform: scale(1.18) rotate(-8deg);
+}
